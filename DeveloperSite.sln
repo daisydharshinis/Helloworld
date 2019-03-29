@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeveloperSite", "DeveloperSite\DeveloperSite.csproj", "{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Production|Any CPU = Production|Any CPU
+		Stable|Any CPU = Stable|Any CPU
+		UAT|Any CPU = UAT|Any CPU
+		Unstable|Any CPU = Unstable|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.Production|Any CPU.Build.0 = Production|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.Stable|Any CPU.ActiveCfg = Stable|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.Stable|Any CPU.Build.0 = Stable|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.UAT|Any CPU.ActiveCfg = UAT|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.UAT|Any CPU.Build.0 = UAT|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.Unstable|Any CPU.ActiveCfg = Unstable|Any CPU
+		{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}.Unstable|Any CPU.Build.0 = Unstable|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01FA1195-A422-4EC8-96F8-58696D0C3FEF}
+	EndGlobalSection
+EndGlobal

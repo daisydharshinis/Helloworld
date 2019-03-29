@@ -1,0 +1,1772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE1B4191-FEB3-4ABD-A144-285A553C6CDA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeveloperSite</RootNamespace>
+    <AssemblyName>DeveloperSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Unstable|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.17.1.0.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=3.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="bcmail-jdk15-1.44, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\bcmail-jdk15-1.44.dll</HintPath>
+    </Reference>
+    <Reference Include="bcprov-jdk15-1.44, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\bcprov-jdk15-1.44.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-logging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\commons-logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="fontbox-1.8.2, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\fontbox-1.8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="icu4j-3.8, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\icu4j-3.8.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="jempbox-1.8.2, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\jempbox-1.8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="junit, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\junit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Web.4.5.1\lib\net35\NLog.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="pdfbox-1.8.2, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pdfbox.1.1.1\lib\pdfbox-1.8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=1.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.2.1\lib\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\EvaluationLicenseAgreement.docx" />
+    <Content Include="Account\EvaluationLicenseAgreement.html" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="BusinessAnalyst\Cryptography\Request\decryptwithdate.json" />
+    <Content Include="BusinessAnalyst\Cryptography\Request\decryptwithkey.json" />
+    <Content Include="BusinessAnalyst\Cryptography\Request\encryption.json" />
+    <Content Include="BusinessAnalyst\Cryptography\Request\getpublickey.json" />
+    <Content Include="BusinessAnalyst\ISO\Web.config" />
+    <None Include="BusinessAnalyst\ISO\Web.Production.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="BusinessAnalyst\ISO\Web.Stable.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="BusinessAnalyst\NLU\Web.config" />
+    <None Include="Configuration\Account\SingleHackathonUserTemplate.json" />
+    <Content Include="BusinessAnalyst\Cryptography\Cryptography.aspx" />
+    <Content Include="BusinessAnalyst\Default.aspx" />
+    <Content Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI.aspx" />
+    <Content Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI2.aspx" />
+    <Content Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI3.aspx" />
+    <Content Include="BusinessAnalyst\ISOWIthExceptions\AutoMobileRebshare.aspx" />
+    <Content Include="BusinessAnalyst\NLU\PDF_Processing.aspx" />
+    <Content Include="BusinessAnalyst\Payment\Payment.aspx" />
+    <Content Include="BusinessAnalyst\ISO\AutoIDCard.aspx" />
+    <Content Include="BusinessAnalyst\Products.aspx" />
+    <Content Include="BusinessAnalyst\PureISOProductLibrary.aspx" />
+    <Content Include="CircularImplementation.aspx" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Package\CreateCustomerAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Package\CreateCustomerAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Samples\DataDictionary\Hack_DataDictionary_ILT_CreateCustomer.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateLocation\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateLocation\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateLocation\Package\CreateLocationAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateLocation\Package\CreateLocationAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateLocation\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\CreateLocation\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Package\GetPropertyListAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Package\GetPropertyListAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\APIClientImplementationGuide_dotNet_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\APIClientImplementationGuide_DotNet_ILT_Issuance.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\APIClientImplementationGuide_Java_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\APIClientImplementationGuide_Java_ILT_Issuance.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\Hack_APIClientImplementationGuide_DotNet_ILT_Issuance.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Document\Hack_APIClientImplementationGuide_Java_ILT_Issuance.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\Hack_IssuanceAPI_dotNet_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\Hack_IssuanceAPI_Java_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_Curl_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_dotNet_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_dotNet_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_Java_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_Python_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Package\IssuanceAPI_Ruby_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\DataDictionary\BOP_PayAndIssueAPI_AttributeMapping.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\DataDictionary\DataDictionary_ILT_Issuance.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\DataDictionary\DataDictionary_ISO_BOP.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\DataDictionary\Hack_DataDictionary_ILT_PayAndIssue.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\JSON\BOP_PayAndIssue_Request.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\JSON\BOP_PayAndIssue_Response.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\JSON\ILT_IssuePolicy_Request.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\JSON\ILT_IssuePolicy_Response.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\JSON\SampleRequest_ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\JSON\SampleResponse_ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\XML\SampleRequest_ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Issuance\Samples\XML\SampleResponse_ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\IssueBinder\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\IssueBinder\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\IssueBinder\Package\IssueBinderAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\IssueBinder\Package\IssueBinderAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\IssueBinder\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\IssueBinder\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Package\PostBoundCheckAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Package\PostBoundCheckAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\APIClientImplementationGuide_dotNet_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\APIClientImplementationGuide_DotNet_ILT_Quote.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\APIClientImplementationGuide_Java_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\APIClientImplementationGuide_Java_ILT_Quote.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\Hack_APIClientImplementationGuide_DotNet_ILT_Quote.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Document\Hack_APIClientImplementationGuide_Java_ILT_Quote.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\Hack_QuoteAPI_dotNet_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\Hack_QuoteAPI_Java_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_Curl_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_dotNet_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_dotNet_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_Java_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_Python_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\QuoteAPI_Ruby_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Package\Quote_API_dotNet_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\DataDictionary\BOP_QuoteAPI_AttributeMapping.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\DataDictionary\DataDictionary_ILT_SaveCustomer.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\DataDictionary\DataDictionary_ISO_BOP.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\JSON\ILT_CreateQuote_Request.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\JSON\ILT_CreateQuote_Response.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\JSON\SampleRequest_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\JSON\SampleRequest_ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\JSON\SampleResponse_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\JSON\SampleResponse_ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\XML\SampleRequest_ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Quote\Samples\XML\SampleResponse_ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Curl_AU.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Curl_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Curl_CA.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Curl_CUP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Curl_GL.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Curl_IH.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_dotNet.doc" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_dotNet.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_AU.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_dotNet_BOP_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_CA.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_CUP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_FWC_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_GL.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_IH.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_ILT_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_dotNet_PLH_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_PROFF_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_SCL_ART_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_SCL_HAB_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_DotNet_SCL_VAC_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java.doc" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_AU.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_BOP_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_CA.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_CUP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_FWC_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_GL.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_IH.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_ILT_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_PLH_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_PROFF_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_SCL_ART_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_SCL_HAB_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Java_SCL_VAC_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_AU.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_BOP.docx" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_CA.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_CUP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_GL.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_IH.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Ruby_AU.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Ruby_BOP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Ruby_CUP.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Ruby_GL.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Ruby_IH.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\Hack_APIClientImplementationGuide_DotNet_ILT_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\Hack_APIClientImplementationGuide_DotNet_PROFF_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\Hack_APIClientImplementationGuide_Java_ILT_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\Hack_APIClientImplementationGuide_Java_PROFF_Rate.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_Curl_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_dotNet_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_dotNet_PROFF.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_Java_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_Java_PROFF.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_Python_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\Hack_RatingAPI_Ruby_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Curl_AU.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Curl_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Curl_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Curl_CUP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Curl_GL.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Curl_IH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_dotNet_AU.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_dotNet_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_dotNet_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_dotNet_CUP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_dotNet_GL.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_dotNet_IH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Javascript_GL.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Java_AU.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Java_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Java_CUP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Java_GL.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Java_IH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Python_AU.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Python_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Python_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Python_CUP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Python_GL.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Python_IH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Ruby_AU.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Ruby_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Ruby_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Ruby_CUP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Ruby_GL.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\ISORatingAPI_Ruby_IH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\MetadataAPI_dotNet_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\MetadataAPI_Java_CA.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Curl_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_FWC.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_PLH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_PROFF.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_SCL_ART.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_SCL_HAB.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_dotNet_SCL_VAC.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_FWC.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_PLH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_PROFF.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_SCL_ART.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_SCL_HAB.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Java_SCL_VAC.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_FWC.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_PLH.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_SCL_ART.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_SCL_HAB.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Python_SCL_VAC.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Package\RatingAPI_Ruby_ILT.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_BOP.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_construction_blanket_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_CONSTRUCTION_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_FWC_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_ILT_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_ISO_BOP.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_PROFF_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_REN_PGM_POLICY-PDF-GENERATION.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\DataDictionary_REN_PGM_RATE-API.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\Data_Dictionary_SCL_ART_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\Hack_DataDictionary_ILT_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\DataDictionary\Hack_DataDictionary_PROFF_Rate.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\ILT_Rating_Request.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\ILT_Rating_Response.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\SampleRequest_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\SampleRequest_ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\SampleRequest_PROFF.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\SampleResponse_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\SampleResponse_ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\JSON\SampleResponse_PROFF.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_FWC.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_PLH.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_SCL_ART.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_SCL_HAB.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleRequest_SCL_VAC.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_FWC.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_PLH.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_SCL_ART.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_SCL_HAB.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Samples\XML\SampleResponse_SCL_VAC.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\SaveProperty\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\SaveProperty\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\SaveProperty\Package\SavePropertyListAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\SaveProperty\Package\SavePropertyListAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\SaveProperty\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\SaveProperty\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Document\APIClientImplementationGuide_DotNet_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Document\APIClientImplementationGuide_Java_CEQ.pdf" />
+    <Content Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Package\UpdateClearanceAPI_dotNet_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Package\UpdateClearanceAPI_Java_CEQ.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Samples\XML\SampleRequest_CEQ.xml" />
+    <Content Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Samples\XML\SampleResponse_CEQ.xml" />
+    <Content Include="Configuration\Static_Files\States.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\BusinessAnalyst\OptionalForms.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Samples\CodeTemplate\pom.xml" />
+    <Content Include="Configuration\Samples\CodeTemplate\readme.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readmeV2_Csharp.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readmeV2_Curl.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readmeV2_Java.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readmeV2_Python.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readmeV2_Ruby.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readme_Csharp.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readme_Curl.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readme_Java.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readme_Python.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\readme_Ruby.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample.java" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample.py" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\SampleV2.java" />
+    <Content Include="Configuration\Samples\CodeTemplate\SampleV2.py" />
+    <Content Include="Configuration\Samples\CodeTemplate\SampleV2_Java.java" />
+    <Content Include="Configuration\Samples\CodeTemplate\SampleV2_Python.py" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample_Curl.txt" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample_Java.java" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample_Python.py" />
+    <Content Include="Configuration\Samples\CodeTemplate\TestAPI.csproj" />
+    <Content Include="Configuration\Samples\CodeTemplate\TestAPI.sln" />
+    <Content Include="Configuration\Samples\CodeTemplate\TestAPIV2.csproj" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA.xml" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CUP.xml" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_GL.xml" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_IH.xml" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\GetMetadataAPI.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_CreateCustomer.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_CreateLocation.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_GetPropertyList.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_Issuance.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_IssueBinder.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_PostBoundCheckList.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_Quote.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_Rate.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_SaveProperty.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CEQ_UpdateClearance.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_FWC_Rate.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_PLH_Rate.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_SCL_ART_Rate.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_SCL_HAB_Rate.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_SCL_VAC_Rate.xml" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\BindRequest_PL.xml" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreateQuote_PL.xml" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetCarrierList_PL.xml" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetRate_PL.xml" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_BOP.xml" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_CA.xml" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_CUP.xml" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_GL.xml" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_IH.xml" />
+    <Content Include="Configuration\Samples\Response\MetadataAPI\GetMetadataAPI.xml" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CONSTRUCTION_Rate.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_CONSTRUCTION_Rate1.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_TK.json" />
+    <Content Include="Configuration\Account\PendingEmailConfirmation.json" />
+    <Content Include="Configuration\Account\UnVerifiedUserAccounts.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\ISO_CA_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\ISO_CA_FormSelection.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_PrivatePassengerDetail.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_TruckDetail.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_ZoneRatedDetail.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_SpecialDetail.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_GarageDetail.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_GarageServicesDetail.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_PublicTransportationDetail.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Hack_Non_ISO_PROFF_Rate.json" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\Hack_APIClientImplementationGuide_dotNet_PDFGeneration_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\Hack_APIClientImplementationGuide_dotNet_Rate_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\Hack_APIClientImplementationGuide_Java_PDFGeneration_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\Hack_APIClientImplementationGuide_Java_Rate_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Hack_PDFGenerationAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Hack_PDFGenerationAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Hack_RatingAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Hack_RatingAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\CA_MetadataAPI.json" />
+    <Content Include="Configuration\Samples\Response\MetadataAPI\CA_MetadataAPI.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\CA_PagesLookup.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\CA_Metadata_GetDomainTables.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\BOP\BC_CancelPolicyBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\BOP\BC_CreatePolicyBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\BOP\BC_CreateQuoteBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\BOP\BC_EndorsePolicyBOP.json" />
+    <Content Include="Configuration\Samples\Request\General\GL_PDF_Generation.json" />
+    <Content Include="Configuration\Samples\Request\General\CA_PDF_Generation.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\CA_ManuscriptReq.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Rate.json" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_BIND-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_CANCEL-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_ENDORSE-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_ISSUE-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_RATE-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_REINSTATE-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_RENEWAL-API.xls" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Bind.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Cancel.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Endorse.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_GenerateDocument.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Issue.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Reinstate.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_Renewal.json" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-GENERATE-DOCUMENT-API.xls" />
+    <Content Include="Configuration\Samples\Response\MetadataAPI\metadata_tree_response.json" />
+    <Content Include="Configuration\Samples\Response\MetadataAPI\Metadata_Subapplication_Response.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\Metada_Subapplication_Request.json" />
+    <Content Include="Configuration\Samples\Package\Metadata_Subapplication_dotNet_CA.zip" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\BTA_Policy_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\Commercial_Umbrella_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\Employment_Practices_Liability_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\GL_Binder_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\Inland_Marine_Binder_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\Package_GL_Binder_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\Property_Binder_PDF.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\Short_Term_Event_Insurance_pdf.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\BAMT_PolicyPDF_1.pdf" />
+    <Content Include="Configuration\Samples\Document\NLUService-SamplePDF\BAMT_PolicyPDF_2.pdf" />
+    <Content Include="Configuration\Developer\TokenDetails.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_BindIssuePay.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\RebShare_GetPolicy.json" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_CREATE-QUOTE-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_GET-POLICY-API.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\RebShare\DataDictionary_REBSHARE-AUTO_BIND-ISSUE-PAY-API.xls" />
+    <Content Include="Configuration\Samples\Dev_Refugee\Rate\Document\APIClientImplementationGuide_Python_PLH.pdf" />
+    <Content Include="Configuration\Samples\Request\Crypto\Encryption.json" />
+    <Content Include="Configuration\Samples\Request\Crypto\GetPublicKey.json" />
+    <Content Include="Configuration\Samples\Request\ISO\AutoIDGen.json" />
+    <Content Include="Configuration\Samples\Request\ISO\100Vehicles.json" />
+    <Content Include="Configuration\Samples\Request\ISO\25Vehicles.json" />
+    <Content Include="Configuration\Samples\Request\ISO\50Vehicles.json" />
+    <Content Include="Configuration\Samples\Request\ISO\5Vehicles.json" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_AutoID.xls" />
+    <Content Include="Configuration\Samples\Request\General\SampleRequest_Auto-ID-Generation.json" />
+    <Content Include="Configuration\Samples\Response\General\SampleResponse_Auto-ID-Generation.json" />
+    <Content Include="Configuration\Samples\Dev_Refugee\General\Package\AutoIDCardGeneration_dotNet.zip" />
+    <Content Include="Configuration\Samples\Dev_Refugee\General\Document\APIClientImplementationGuide_DotNet.pdf" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CY.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_CY.json" />
+    <None Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CONSTRUCTION_Rate.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_CreateCustomer.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_CreateLocation.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_GetPropertyList.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_Issuance.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_IssueBinder.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_PostBoundCheckList.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_Quote.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_Rate.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_SaveProperty.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_CEQ_UpdateClearance.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_FWC_Rate.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_PLH_Rate.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_SCL_ART_Rate.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_SCL_HAB_Rate.xml" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_SCL_VAC_Rate.xml" />
+    <Content Include="Configure.aspx" />
+    <Content Include="Content\bootstrap-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Template\confirmation_email.html" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DeveloperSandbox\Products.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Helper\XSLT\GetListISOERCCircularsV2.xslt" />
+    <Content Include="Holding.aspx" />
+    <Content Include="HowTo.aspx" />
+    <Content Include="Images\CommercialProperty.jpg" />
+    <Content Include="Images\environmental_insurance.png" />
+    <Content Include="Images\Excel.ico" />
+    <Content Include="Images\hackathon.svg" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\munichre_logo.png" />
+    <Content Include="Images\NonMonetaryEndorsementChat.png" />
+    <Content Include="Images\filter.svg" />
+    <Content Include="Images\pentaho_reports.jpg" />
+    <Content Include="Images\SpinnerUpload.svg" />
+    <Content Include="Images\trophy_gold.png" />
+    <Content Include="Images\truckers_insurance_demo.png" />
+    <Content Include="Images\verified.svg" />
+    <Content Include="Images\mail-sent.svg" />
+    <Content Include="Images\next_page.svg" />
+    <Content Include="Images\api-two-gears.png" />
+    <Content Include="Images\prev_page.svg" />
+    <Content Include="Images\EarthQuakeProgram.png" />
+    <Content Include="Images\first_page.svg" />
+    <Content Include="Images\last_page.svg" />
+    <Content Include="Images\loader.svg" />
+    <Content Include="Images\Personal_Lines.png" />
+    <Content Include="Images\PL_New_UI_Demo.png" />
+    <Content Include="Images\ripple.gif" />
+    <Content Include="Images\SCL_Demo.png" />
+    <Content Include="Images\underconstruction.png" />
+    <Content Include="Images\XLS_Logo.png" />
+    <Content Include="ISO_Products\BA\BusinessOwnersQuotePolicy.aspx" />
+    <Content Include="BusinessAnalyst\ISO\Metadata.aspx" />
+    <Content Include="BusinessAnalyst\ISO\MetadataUI.aspx" />
+    <Content Include="PMT_Test\TestFormsPDFGeneration.aspx" />
+    <Content Include="PMT_Test\TestRateTemp.aspx" />
+    <Content Include="BusinessAnalyst\ISO\Rate.aspx" />
+    <Content Include="Configuration\BusinessAnalyst\ISO\ClassCodes.xml" />
+    <Content Include="Configuration\BusinessAnalyst\ISO\ERCList.xml" />
+    <Content Include="Configuration\BusinessAnalyst\ISO\GetList.xml" />
+    <Content Include="Configuration\BusinessAnalyst\ISO\InputAttributeList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\BusinessAnalyst\ISO\OutputAttributeList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\BusinessAnalyst\ISO\StateCodeDetails.xml" />
+    <Content Include="DeveloperSandbox\APICatalog.aspx" />
+    <Content Include="Error_Pages\Common.aspx" />
+    <Content Include="Helper\XSLT\GetListISOERCCirculars.xslt" />
+    <Content Include="Helper\XSLT\GetListISOERCVersions.xslt" />
+    <Content Include="Content\bootstrap-theme1.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Images\Auto_Demo.png" />
+    <Content Include="Images\check.svg" />
+    <Content Include="Images\check_circle.svg" />
+    <Content Include="Images\Demo.gif" />
+    <Content Include="Images\document.svg" />
+    <Content Include="Images\download.svg" />
+    <Content Include="Images\error.svg" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\PL_Demo.png" />
+    <Content Include="Images\solartisLogo.png" />
+    <Content Include="Images\SolartisIcon.png" />
+    <Content Include="Images\spinner.svg" />
+    <Content Include="Images\Target.png" />
+    <Content Include="Images\Travel_Demo.png" />
+    <Content Include="Images\upload.svg" />
+    <Content Include="Logs\README.txt" />
+    <Content Include="Scripts\CodeMirror\addon\comment\comment.js" />
+    <Content Include="Scripts\CodeMirror\addon\comment\continuecomment.js" />
+    <Content Include="Scripts\CodeMirror\addon\dialog\dialog.css" />
+    <Content Include="Scripts\CodeMirror\addon\dialog\dialog.js" />
+    <Content Include="Scripts\CodeMirror\addon\display\autorefresh.js" />
+    <Content Include="Scripts\CodeMirror\addon\display\fullscreen.css" />
+    <Content Include="Scripts\CodeMirror\addon\display\fullscreen.js" />
+    <Content Include="Scripts\CodeMirror\addon\display\panel.js" />
+    <Content Include="Scripts\CodeMirror\addon\display\placeholder.js" />
+    <Content Include="Scripts\CodeMirror\addon\display\rulers.js" />
+    <Content Include="Scripts\CodeMirror\addon\edit\closebrackets.js" />
+    <Content Include="Scripts\CodeMirror\addon\edit\closetag.js" />
+    <Content Include="Scripts\CodeMirror\addon\edit\continuelist.js" />
+    <Content Include="Scripts\CodeMirror\addon\edit\matchbrackets.js" />
+    <Content Include="Scripts\CodeMirror\addon\edit\matchtags.js" />
+    <Content Include="Scripts\CodeMirror\addon\edit\trailingspace.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\brace-fold.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\comment-fold.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\foldcode.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\foldgutter.css" />
+    <Content Include="Scripts\CodeMirror\addon\fold\foldgutter.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\indent-fold.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\markdown-fold.js" />
+    <Content Include="Scripts\CodeMirror\addon\fold\xml-fold.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\anyword-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\css-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\html-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\javascript-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\show-hint.css" />
+    <Content Include="Scripts\CodeMirror\addon\hint\show-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\sql-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\hint\xml-hint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\coffeescript-lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\css-lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\html-lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\javascript-lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\json-lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\lint.css" />
+    <Content Include="Scripts\CodeMirror\addon\lint\lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\lint\yaml-lint.js" />
+    <Content Include="Scripts\CodeMirror\addon\merge\merge.css" />
+    <Content Include="Scripts\CodeMirror\addon\merge\merge.js" />
+    <Content Include="Scripts\CodeMirror\addon\mode\loadmode.js" />
+    <Content Include="Scripts\CodeMirror\addon\mode\multiplex.js" />
+    <Content Include="Scripts\CodeMirror\addon\mode\multiplex_test.js" />
+    <Content Include="Scripts\CodeMirror\addon\mode\overlay.js" />
+    <Content Include="Scripts\CodeMirror\addon\mode\simple.js" />
+    <Content Include="Scripts\CodeMirror\addon\runmode\colorize.js" />
+    <Content Include="Scripts\CodeMirror\addon\runmode\runmode-standalone.js" />
+    <Content Include="Scripts\CodeMirror\addon\runmode\runmode.js" />
+    <Content Include="Scripts\CodeMirror\addon\runmode\runmode.node.js" />
+    <Content Include="Scripts\CodeMirror\addon\scroll\annotatescrollbar.js" />
+    <Content Include="Scripts\CodeMirror\addon\scroll\scrollpastend.js" />
+    <Content Include="Scripts\CodeMirror\addon\scroll\simplescrollbars.css" />
+    <Content Include="Scripts\CodeMirror\addon\scroll\simplescrollbars.js" />
+    <Content Include="Scripts\CodeMirror\addon\search\jump-to-line.js" />
+    <Content Include="Scripts\CodeMirror\addon\search\match-highlighter.js" />
+    <Content Include="Scripts\CodeMirror\addon\search\matchesonscrollbar.css" />
+    <Content Include="Scripts\CodeMirror\addon\search\matchesonscrollbar.js" />
+    <Content Include="Scripts\CodeMirror\addon\search\search.js" />
+    <Content Include="Scripts\CodeMirror\addon\search\searchcursor.js" />
+    <Content Include="Scripts\CodeMirror\addon\selection\active-line.js" />
+    <Content Include="Scripts\CodeMirror\addon\selection\mark-selection.js" />
+    <Content Include="Scripts\CodeMirror\addon\selection\selection-pointer.js" />
+    <Content Include="Scripts\CodeMirror\addon\tern\tern.css" />
+    <Content Include="Scripts\CodeMirror\addon\tern\tern.js" />
+    <Content Include="Scripts\CodeMirror\addon\tern\worker.js" />
+    <Content Include="Scripts\CodeMirror\addon\wrap\hardwrap.js" />
+    <Content Include="Scripts\CodeMirror\keymap\emacs.js" />
+    <Content Include="Scripts\CodeMirror\keymap\sublime.js" />
+    <Content Include="Scripts\CodeMirror\keymap\vim.js" />
+    <Content Include="Scripts\CodeMirror\lib\codemirror.css" />
+    <Content Include="Scripts\CodeMirror\lib\codemirror.js" />
+    <Content Include="Scripts\CodeMirror\mode\clike\clike.js" />
+    <Content Include="Scripts\CodeMirror\mode\javascript\index.html" />
+    <Content Include="Scripts\CodeMirror\mode\javascript\javascript.js" />
+    <Content Include="Scripts\CodeMirror\mode\javascript\json-ld.html" />
+    <Content Include="Scripts\CodeMirror\mode\javascript\test.js" />
+    <Content Include="Scripts\CodeMirror\mode\javascript\typescript.html" />
+    <Content Include="Scripts\CodeMirror\mode\meta.js" />
+    <Content Include="Scripts\CodeMirror\mode\xml\index.html" />
+    <Content Include="Scripts\CodeMirror\mode\xml\test.js" />
+    <Content Include="Scripts\CodeMirror\mode\xml\xml.js" />
+    <Content Include="Scripts\CodeMirror\theme\eclipse.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Scripts\JSONEditor\jsoneditor.css" />
+    <Content Include="Scripts\JSONEditor\jsoneditor.js" />
+    <Content Include="Scripts\JSONEditor\jsoneditor.min.css" />
+    <Content Include="Scripts\JSONEditor\jsoneditor.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Sandbox\sandbox.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Solartis_Products\BA\General.aspx" />
+    <Content Include="Solartis_Products\BA\InsuranceFlow.aspx" />
+    <Content Include="Solartis_Products\BA\BlockChain.aspx" />
+    <Content Include="Solartis_Products\BA\PageViewer.aspx" />
+    <Content Include="Solartis_Products\BA\PolicyIssuance.aspx" />
+    <Content Include="Solartis_Products\BA\RateXml.aspx" />
+    <Content Include="Solartis_Products\BA\Rate.aspx" />
+    <Content Include="Solartis_Products\BA\TransactionXml.aspx" />
+    <Content Include="Configuration\BusinessAnalyst\NonISO\InputAttributeList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\BusinessAnalyst\NonISO\OutputAttributeList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\BlockChain\BC_BindRequest_PL.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\BlockChain\BC_CreateQuote_PL.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\BlockChain\BC_GetCarrierList_PL.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\BlockChain\BC_GetMetadataAPI.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\BlockChain\BC_GetRate_PL.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\CEQ_Rating_Request.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\FWC_Rating_Request.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\FWC_Rating_Request_5Location.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\FWC_Rating_Request_Location.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\FWC_Request_Template.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\SCL_ART_Rating_Request.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\SCL_HAB_Rating_Request.xml" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\SCL_VAC_Rating_Request.xml" />
+    <Content Include="Solartis_Products\Metadata.aspx" />
+    <Content Include="UserExperience\Products.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Template\CA_Vehicle_Template.xls" />
+    <Content Include="Content\Template\AU_Vehicle_Template.xls" />
+    <Content Include="Account\ManageUser.aspx" />
+    <Content Include="Images\ok.jpg" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\UserActivities.aspx" />
+    <Content Include="Content\Template\CA_V2_Vehicle_Template.xls" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\EvaluationLicenseAgreement.pdf" />
+    <Content Include="Configuration\Account\UserAccounts.json" />
+    <Content Include="Configuration\Developer\DeveloperSandboxConfiguration.json" />
+    <Content Include="Configuration\Developer\SwaggerCodeGenDefaultOptions.json" />
+    <Content Include="Configuration\Account\TotalPrivileges.json" />
+    <Content Include="Configuration\UserExperience\UserExperienceSandboxConfiguration.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_AU.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CUP.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_GL.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_IH.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\Nerc_BOP_Rate.json" />
+    <Content Include="Configuration\Samples\Request\Nerc\Nerc_GL_Rate.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_ILT_Issuance.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_ILT_Quote.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_ILT_Rate.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_PROFF_Rate.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\BindRequest_PL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CancelPolicy.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CancelPolicyBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreateInsured.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreatePolicy.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreatePolicyAL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreatePolicyBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreatePolicyGL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreatePolicyUL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreatePolicyWC.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreateQuoteBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\CreateQuote_PL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\EndorsePolicy.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\EndorsePolicyBOP.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetCarrierList_PL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetCOI.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetInsured.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetPolicyDetails.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\GetRate_PL.json" />
+    <Content Include="Configuration\Samples\Request\TransactionAPI\ReinstatePoicy.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_AU.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_BOP.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_CA.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_CUP.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_GL.json" />
+    <Content Include="Configuration\Samples\Response\ISO\ISO_IH.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_ILT_Issuance.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_ILT_Quote.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_ILT_Rate.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_PROFF_Rate.json" />
+    <Content Include="Configuration\BusinessAnalyst\BusinessAnalystSandboxConfiguration.json" />
+    <Content Include="Configuration\Developer\CodeGenConfiguration.json" />
+    <Content Include="Configuration\Samples\Request\ISO\ISO_CA_V2.json" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CancelPolicyAPI_Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CancelPolicyAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CancelPolicyAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CreatePolicyAPI_Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CreatePolicyAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CreatePolicyAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_CreateQuoteAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_EndorsePolicyAPI_Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_EndorsePolicyAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_EndorsePolicyAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_GetCOIAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_GetCOIAPI__Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_GetInsuredDetailsAPI_Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_GetInsuredDetailsAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_GetPolicyDetailsAPI_Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_GetPolicyDetailsAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_ReinstatePolicyAPI_Dotnet.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\BC_ReinstatePolicyAPI_Java.zip" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\CancelPolicy.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\CancelPolicyBOP.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\CreatePolicy.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\CreatePolicyBOP.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\CreateQuoteBOP.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\EndorsePolicy.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\EndorsePolicyBOP.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\GetCOI.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\GetInsured.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\GetPolicyDetails.json" />
+    <Content Include="Configuration\Samples\Response\TransactionAPI\ReinstatePoicy.json" />
+    <Content Include="Configuration\Developer\DocGenConfig.json" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample.rb" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\BOP_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\BOP_RateandForms.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\GLFormSelection.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\GL_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\GL_RateandForms.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\BOP_FormSelection.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\CA_DomainTableLookup.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\GL_GenerateExcel.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\BOP_GeneratePDF_Sample.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\GL_GeneratePDF_Sample.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\ISO_BOP_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\ISO_GL_FormSelection.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\ISO_GL_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\ISO_FormUploader.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_SCL_MARKEL_Rate.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_SCL_MARKEL_Rate.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\ISO_FormUploader.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\Starr_FormUploader.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\StarrGL_DocumentRules.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\GL_DocumentRules.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\GL_ValueDefinitionLookup.json" />
+    <Content Include="Configuration\Samples\Request\Non_ISO\Non_ISO_REN_PGM_Rate.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\REN_PGM_GenratePDF.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\REN_PGM_FormSelection.json" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_PDFGeneration_BOP.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_PDFGeneration_GL.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_PDFUploader.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_PDFUpload_GL.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_DotNet_PDFGeneration.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_DotNet_PDFGeneration_BOP.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_DotNet_PDFGeneration_GL.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_DotNet_PDFUploader.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_DotNet_PDFUpload_GL.pdf" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_REN_PdfGeneration.json" />
+    <Content Include="Configuration\Samples\Response\Non_ISO\Non_ISO_REN_PGM_Rate.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\BOP_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\GL_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\ISO_BOP_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\ISO_GL_GeneratePDF.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\Non_ISO_REN_PdfGeneration.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\Starr_FormUploader.json" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\ManuscriptFormUploadAPI_dotNet_GL.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\ManuscriptFormUploadAPI_Java_GL.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\PDFGenerationAPI_dotNet_BOP.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\PDFGenerationAPI_dotNet_GL.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\PDFGenerationAPI_Java_BOP.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\PDFGenerationAPI_Java_GL.zip" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\REN_PGM_Quote.json" />
+    <Content Include="Content\Template\lulo_renters_rater_oh_clean.xlsx" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\FormSelectionAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\FormSelectionAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\PDFGenerationAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\PDFGenerationAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Rate_FormSelectionAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Rate_FormSelectionAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\RatingAPI_dotNet_BuildersRisk.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\RatingAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\RatingAPI_Java_BuildersRisk.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\RatingAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_dotNet_FormSelection_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_dotNet_PDFGeneration_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_dotNet_RateAndFormSelection_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_dotNet_Rate_BuildersRisk.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_dotNet_Rate_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_dotNet_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_FormSelection_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_PDFGeneration_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_RateAndFormSelection_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_Rate_BuildersRisk.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_Rate_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Java_RentersProgram.pdf" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\REN_PGM_FormSelection.json" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\REN_PGM_Quote.json" />
+    <Content Include="Configuration\Samples\Request\RateAndForms\REN_PGM_Full_Policy.json" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Rate_FormSelection_PolicyPdfAPI_dotNet_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Package\TransactionAPI\Rate_FormSelection_PolicyPdfAPI_Java_RentersProgram.zip" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Rate_FormSelection_PolicyPdfGeneration_dotNet.pdf" />
+    <Content Include="Configuration\Samples\Document\TransactionAPI\APIClientImplementationGuide_Rate_FormSelection_PolicyPdfGeneration_Java.pdf" />
+    <Content Include="Configuration\Samples\Response\RateAndForms\REN_PGM_Full_Policy.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\CA_GenerateExcel.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\GL_DomainTableLookup.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\CA_ValueDefinitionLookup.json" />
+    <Content Include="Configuration\Developer\DocGenConfigCsharp.json" />
+    <Content Include="Configuration\Developer\DocGenConfigCsharpV2.json" />
+    <Content Include="Configuration\Developer\DocGenConfigCurl.json" />
+    <Content Include="Configuration\Developer\DocGenConfigJava.json" />
+    <Content Include="Configuration\Developer\DocGenConfigJavaV2.json" />
+    <Content Include="Configuration\Developer\DocGenConfigPython.json" />
+    <Content Include="Configuration\Developer\DocGenConfigPythonV2.json" />
+    <Content Include="Configuration\Developer\DocGenConfigRuby.json" />
+    <Content Include="Configuration\Developer\DocGenConfigRubyV2.json" />
+    <Content Include="Configuration\Samples\CodeTemplate\SampleV2.rb" />
+    <Content Include="Configuration\Samples\CodeTemplate\config.json" />
+    <Content Include="Configuration\Samples\CodeTemplate\config.properties" />
+    <Content Include="Configuration\Samples\CodeTemplate\Packages.config" />
+    <Content Include="Configuration\Samples\CodeTemplate\Sample_Ruby.rb" />
+    <Content Include="Configuration\Samples\CodeTemplate\SampleV2_Ruby.rb" />
+    <Content Include="Configuration\BusinessAnalyst\BA_GeneralAPIs.json" />
+    <Content Include="Configuration\Samples\Request\General\VINDecoder.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\GetMetadataV2.json" />
+    <Content Include="Configuration\Samples\Request\MetadataAPI\GetApplicationList.json" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_ISO_AU.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_ISO_BOP.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_ISO_CA.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_ISO_CUP.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_ISO_GL.xls" />
+    <Content Include="Configuration\Samples\DataDictionary\DataDictionary_ISO_IH.xls" />
+    <Content Include="Content\Template\construction_blanket_rating_model.xlsm" />
+    <Content Include="Content\Template\construction_rating_model.xlsm" />
+    <Content Include="Configuration\SandboxConfiguration.json" />
+    <Content Include="Content\Template\CA_AutoID_Vehicle_Template.xls" />
+    <None Include="Helper\XSD\DroolsRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\ParentServiceRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\GetApplicationData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\GetApplicationHtmlSvcRq.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\GetApplicationMetaData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\GetData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\GetList.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\GetSubQuestionList.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\SaveApplicationDataSvcRq.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\SaveData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Helper\XSD\ServiceRequest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_AU.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_AU_PrivatePassengerDetail.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_AU_TruckDetail.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_BOP.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CA.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CA_PrivatePassengerDetail.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CA_TruckDetail.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CUP.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_GL.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_IH.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Starr_ISO_BOP.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CA_V2.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CA_V2_PrivatePassengerDetail.json" />
+    <Content Include="ISO_Products\BA\JSON\SampleRequest\Pure_ISO_CA_V2_TruckDetail.json" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\ISOServices - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Prod - Azure Cloud - Sandbox.pubxml" />
+    <None Include="Properties\PublishProfiles\SCI - Local - Sandbox.pubxml" />
+    <None Include="Properties\PublishProfiles\UCI - Local - Sandbox.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <None Include="Readme.md" />
+    <Content Include="User_Controls\CodeView.ascx" />
+    <Content Include="User_Controls\PagingSearching.ascx" />
+    <Content Include="User_Controls\ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Solartis_Products\BA\XML\SampleRequest\PLH_Rating_Request.xml" />
+    <None Include="Web.Production.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Stable.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.UAT.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Unstable.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Cryptography\Cryptography.aspx.cs">
+      <DependentUpon>Cryptography.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Cryptography\Cryptography.aspx.designer.cs">
+      <DependentUpon>Cryptography.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI.aspx.cs">
+      <DependentUpon>ISOMetadataUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI.aspx.designer.cs">
+      <DependentUpon>ISOMetadataUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI2.aspx.cs">
+      <DependentUpon>ISOMetadataUI2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI2.aspx.designer.cs">
+      <DependentUpon>ISOMetadataUI2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI3.aspx.cs">
+      <DependentUpon>ISOMetadataUI3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISODomainTableLookup\ISOMetadataUI3.aspx.designer.cs">
+      <DependentUpon>ISOMetadataUI3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISOWIthExceptions\AutoMobileRebshare.aspx.cs">
+      <DependentUpon>AutoMobileRebshare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISOWIthExceptions\AutoMobileRebshare.aspx.designer.cs">
+      <DependentUpon>AutoMobileRebshare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\NLU\PDF_Processing.aspx.cs">
+      <DependentUpon>PDF_Processing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\NLU\PDF_Processing.aspx.designer.cs">
+      <DependentUpon>PDF_Processing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Payment\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Payment\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\AutoIDCard.aspx.cs">
+      <DependentUpon>AutoIDCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\AutoIDCard.aspx.designer.cs">
+      <DependentUpon>AutoIDCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\PureISOProductLibrary.aspx.cs">
+      <DependentUpon>PureISOProductLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\PureISOProductLibrary.aspx.designer.cs">
+      <DependentUpon>PureISOProductLibrary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CircularImplementation.aspx.cs">
+      <DependentUpon>CircularImplementation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CircularImplementation.aspx.designer.cs">
+      <DependentUpon>CircularImplementation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Analytics.cs" />
+    <Compile Include="Common\Api\SandboxKB.cs" />
+    <Compile Include="Common\Archiver.cs" />
+    <Compile Include="Common\CodeGen\CodeGenerator.cs" />
+    <Compile Include="Common\CodeManagement\DeveloperAttribute.cs" />
+    <Compile Include="Common\CodeManagement\Developers.cs" />
+    <Compile Include="Common\ExcelFile.cs" />
+    <Compile Include="Common\KnowledgebaseKeyValuePairHelper.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\Model\ApplicationListResponse.cs" />
+    <Compile Include="Common\Model\SimpleKnowledgebaseRequest.cs" />
+    <Compile Include="Common\Parser\SpreadSheetParser.cs" />
+    <Compile Include="Common\Security.cs" />
+    <Compile Include="Common\Api\ServiceClient.cs" />
+    <Compile Include="Common\SwaggerCodeGenerator.cs" />
+    <Compile Include="Common\SwaggerCofiguration.cs" />
+    <Compile Include="Common\TokenGenerator.cs" />
+    <Compile Include="Common\UserManager.cs" />
+    <Compile Include="Common\Util\StringUtil.cs" />
+    <Compile Include="Common\Util\Util.cs" />
+    <Compile Include="Common\Util\WebServiceUtil.cs" />
+    <Compile Include="Common\Model\CommercialAutoRate.cs" />
+    <Compile Include="Common\Model\DroolsRequest.cs" />
+    <Compile Include="Configuration\Samples\CodeTemplate\Sample.cs" />
+    <Compile Include="Configuration\Samples\CodeTemplate\Sample_Csharp.cs" />
+    <Compile Include="Configure.aspx.cs">
+      <DependentUpon>Configure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configure.aspx.designer.cs">
+      <DependentUpon>Configure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeveloperSandbox\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeveloperSandbox\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Holding.aspx.cs">
+      <DependentUpon>Holding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Holding.aspx.designer.cs">
+      <DependentUpon>Holding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HowTo.aspx.cs">
+      <DependentUpon>HowTo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HowTo.aspx.designer.cs">
+      <DependentUpon>HowTo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ISO_Products\BA\BusinessOwnersQuotePolicy.aspx.cs">
+      <DependentUpon>BusinessOwnersQuotePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ISO_Products\BA\BusinessOwnersQuotePolicy.aspx.designer.cs">
+      <DependentUpon>BusinessOwnersQuotePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\Metadata.aspx.cs">
+      <DependentUpon>Metadata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\Metadata.aspx.designer.cs">
+      <DependentUpon>Metadata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\MetadataUI.aspx.cs">
+      <DependentUpon>MetadataUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\MetadataUI.aspx.designer.cs">
+      <DependentUpon>MetadataUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PMT_Test\TestFormsPDFGeneration.aspx.cs">
+      <DependentUpon>TestFormsPDFGeneration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PMT_Test\TestFormsPDFGeneration.aspx.designer.cs">
+      <DependentUpon>TestFormsPDFGeneration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PMT_Test\TestRateTemp.aspx.cs">
+      <DependentUpon>TestRateTemp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PMT_Test\TestRateTemp.aspx.designer.cs">
+      <DependentUpon>TestRateTemp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\Rate.aspx.cs">
+      <DependentUpon>Rate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessAnalyst\ISO\Rate.aspx.designer.cs">
+      <DependentUpon>Rate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="DeveloperSandbox\APICatalog.aspx.cs">
+      <DependentUpon>APICatalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeveloperSandbox\APICatalog.aspx.designer.cs">
+      <DependentUpon>APICatalog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error_Pages\Common.aspx.cs">
+      <DependentUpon>Common.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error_Pages\Common.aspx.designer.cs">
+      <DependentUpon>Common.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Model\ApplicationGetListSvcRqType.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SandboxWebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\General.aspx.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\General.aspx.designer.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\InsuranceFlow.aspx.cs">
+      <DependentUpon>InsuranceFlow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\InsuranceFlow.aspx.designer.cs">
+      <DependentUpon>InsuranceFlow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\BlockChain.aspx.cs">
+      <DependentUpon>BlockChain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\BlockChain.aspx.designer.cs">
+      <DependentUpon>BlockChain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\PageViewer.aspx.cs">
+      <DependentUpon>PageViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\PageViewer.aspx.designer.cs">
+      <DependentUpon>PageViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\PolicyIssuance.aspx.cs">
+      <DependentUpon>PolicyIssuance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\PolicyIssuance.aspx.designer.cs">
+      <DependentUpon>PolicyIssuance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\RateXml.aspx.cs">
+      <DependentUpon>RateXml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\RateXml.aspx.designer.cs">
+      <DependentUpon>RateXml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\Rate.aspx.cs">
+      <DependentUpon>Rate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\Rate.aspx.designer.cs">
+      <DependentUpon>Rate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\TransactionXml.aspx.cs">
+      <DependentUpon>TransactionXml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\BA\TransactionXml.aspx.designer.cs">
+      <DependentUpon>TransactionXml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solartis_Products\Metadata.aspx.cs">
+      <DependentUpon>Metadata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solartis_Products\Metadata.aspx.designer.cs">
+      <DependentUpon>Metadata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserExperience\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserExperience\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="User_Controls\CodeView.ascx.cs">
+      <DependentUpon>CodeView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\CodeView.ascx.designer.cs">
+      <DependentUpon>CodeView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\PagingSearching.ascx.cs">
+      <DependentUpon>PagingSearching.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\PagingSearching.ascx.designer.cs">
+      <DependentUpon>PagingSearching.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\UserActivities.aspx.cs">
+      <DependentUpon>UserActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\UserActivities.aspx.designer.cs">
+      <DependentUpon>UserActivities.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\CreateCustomer\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\CreateLocation\Samples\DataDictionary\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\CreateLocation\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Samples\DataDictionary\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\GetPropertyList\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\IssueBinder\Samples\DataDictionary\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\IssueBinder\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Samples\DataDictionary\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\PostboundCheckList\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\SaveProperty\Samples\DataDictionary\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\SaveProperty\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Samples\DataDictionary\" />
+    <Folder Include="Configuration\Samples\Dev_Refugee\UpdateClearance\Samples\JSON\" />
+    <Folder Include="Configuration\Samples\Request\BlockChain\" />
+    <Folder Include="Configuration\Samples\Response\BlockChain\" />
+    <Folder Include="Configuration\Samples\Response\Nerc\" />
+    <Folder Include="ISO_Products\BA\XML\" />
+    <Folder Include="Temp\" />
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stable|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59442</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59442/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties Configuration_4Developer_4DocGenConfig_1json__JSONSchema="http://json.schemastore.org/bootstraprc" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
